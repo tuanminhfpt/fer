@@ -176,3 +176,7 @@ h1 {
     white-space: nowrap;
     color: red;
 }
+
+.profile-pic {
+    height: 50%;
+}

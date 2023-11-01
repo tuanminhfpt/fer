@@ -76,7 +76,10 @@ function Sidebar() {
       <div>
         <hr className="text-white" />
         <div className="nav-item p-2">
-          <a href="#" className="p-1 text-decoration-none text-white">
+          <a
+            href="/admin/profile"
+            className="p-1 text-decoration-none text-white"
+          >
             <i className="bi bi-person-circle me-3 fs-4"></i>
             <span className="fs-4">Profile</span>
           </a>
