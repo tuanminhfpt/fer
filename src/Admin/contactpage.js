@@ -3,7 +3,9 @@ import Sidebar from "./components/sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar";
 import { Route, Routes } from "react-router-dom";
-import Contact from "./users/contact";
+import ContactTable from "./contacttable/contactpage";
+import ContactCreate from "./contacttable/contactcreate";
+import ContactEdit from "./contacttable/contactedit";
 
 function ContactPage() {
   const [toggle, setToggle] = useState(false);
@@ -25,16 +27,11 @@ function ContactPage() {
 
   return (
     <div className="d-flex">
-      <div className={toggle ? "d-none" : "w-auto position-fixed"}>
-        <Sidebar />
-      </div>
-      <div className={toggle ? "d-none" : "invisible"}>
-        <Sidebar />
-      </div>
       <div className="col overflow-auto">
-        <Navbar Toggle={Toggle} />
         <Routes>
-          <Route path="/" element={<Contact />}></Route>
+          <Route path="/" element={<ContactTable />}></Route>
+          <Route path="/create" element={<ContactCreate />}></Route>
+          <Route path="/edit/:empid" element={<ContactEdit />}></Route>
         </Routes>
       </div>
     </div>

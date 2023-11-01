@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "username": "Admin User",
+      "age": 30,
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "username": "Manager User",
+      "age": 35,
+      "email": "manager@gmail.com",
+      "password": "manager123",
+      "role": "manager"
+    },
+    {
+      "id": 4,
+      "username": "Demo",
+      "age": "23",
+      "email": "khoa@gmail.com",
+      "password": "123",
+      "role": "Admin"
+    }
+  ],
+  "ads": [
+    {
+      "id": 1,
+      "image": "https://cdn.dribbble.com/users/1124366/screenshots/8260912/media/1e3d7874eb0cd189a67ab40ef91d0b32.jpg",
+      "title": "Beauty Class",
+      "content": "This is an advertisement for something. classssssssssssssssssssss",
+      "label": "Class Shop",
+      "category": "Fashion"
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.dribbble.com/userupload/5531125/file/original-3152cd9e09c41512256890e7979ff5d5.jpg?resize=850x850",
+      "title": "Ad Title 2",
+      "content": "Another advertisement for something else.",
+      "label": "Home Shop",
+      "category": "Fashion"
+    },
+    {
+      "image": "https://cdn.dribbble.com/userupload/5321831/file/original-fa3e59b5bebe19e31d528f2048fb9601.jpg?resize=1200x900",
+      "title": "Noodles",
+      "content": "New noodles is coming!!!",
+      "label": "Noodles Shop",
+      "category": "Food",
+      "id": 3
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "username": "User 1",
+      "email": "user1@gmail.com",
+      "date_send": "2023-10-26",
+      "content": "This is a contact message from User 1."
+    },
+    {
+      "id": 2,
+      "username": "User 2",
+      "email": "user2@gmail.com",
+      "date_send": "2023-10-25",
+      "content": "A contact message from User 2."
+    }
+  ]
+}

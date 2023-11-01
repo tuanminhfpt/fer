@@ -3,7 +3,9 @@ import Sidebar from "./components/sidebar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar";
 import { Route, Routes } from "react-router-dom";
-import User from "./users/user";
+import UserTable from "./usertable/userpage";
+import UserCreate from "./usertable/usercreate";
+import UserEdit from "./usertable/useredit";
 
 function UserPage() {
   const [toggle, setToggle] = useState(false);
@@ -25,16 +27,11 @@ function UserPage() {
 
   return (
     <div className="d-flex">
-      <div className={toggle ? "d-none" : "w-auto position-fixed"}>
-        <Sidebar />
-      </div>
-      <div className={toggle ? "d-none" : "invisible"}>
-        <Sidebar />
-      </div>
       <div className="col overflow-auto">
-        <Navbar Toggle={Toggle} />
         <Routes>
-          <Route path="/" element={<User />}></Route>
+          <Route path="/" element={<UserTable />}></Route>
+          <Route path="/create" element={<UserCreate />}></Route>
+          <Route path="/edit/:empid" element={<UserEdit />}></Route>
         </Routes>
       </div>
     </div>
