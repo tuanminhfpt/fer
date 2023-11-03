@@ -61,7 +61,7 @@ function UserProfile() {
           <div className="row">
             <div className="col-md-4 Content-left text-center">
               <img
-                className="img-fluid rounded-circle profile-pic img-thumbnail"
+                className="img-fluid rounded-circle img-thumbnail"
                 alt="User Profile Image"
                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAEYvVG8OxGwIpmAAYf9knMEvJEv2aeHtfg1ONkacHRt2S_DBsx087zCVPJD9r5dl3vI2N-RnG154JEYguZUcNIpiJmjvOiWeFonox7FbBIdK77SC8lEOWWOjpA--RiQnrzhKukBL69beJeUm-2BRKnwItukEf2LMwGRQzl84n7fpDzRHfvkruGDiOtw/s564/312139402_1261086881378060_4448040992540541196_n.webp"
               />
