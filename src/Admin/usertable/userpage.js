@@ -12,7 +12,8 @@ function UserPage() {
   const [empdata, empdatachange] = useState([]);
   const [sortedEmpData, setSortedEmpData] = useState([]);
   const [isAscending, setIsAscending] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(""); // State to store the search query
+  const [searchQuery, setSearchQuery] = useState("");
+  const [status, setStatus] = useState(0);
   const navigate = useNavigate();
 
   const LoadDetail = (id) => {
@@ -79,13 +80,28 @@ function UserPage() {
     setIsAscending(!isAscending);
   };
 
-  // Use the searchQuery state to filter data based on the input
   useEffect(() => {
     const filteredData = empdata.filter((user) =>
       user.username.toLowerCase().startsWith(searchQuery.toLowerCase())
     );
     setSortedEmpData(filteredData);
   }, [searchQuery]);
+
+  async function handleUpdate(id) {
+    if (window.confirm("Do you want to change the status of this user?")) {
+      let UserList = [...empdata];
+      let newUser = UserList.filter((u) => u.id === id)[0];
+      newUser.status = !newUser.status;
+      await fetch(`http://localhost:9999/users/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+      setStatus(!status);
+    }
+  }
 
   return (
     <div className="d-flex">
@@ -134,6 +150,7 @@ function UserPage() {
                 <th>Email</th>
                 <th>Password</th>
                 <th>Role</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -147,6 +164,13 @@ function UserPage() {
                     <td>{item.email}</td>
                     <td>{item.password}</td>
                     <td>{item.role}</td>
+                    <td>
+                      {item.status === true ? (
+                        <span style={{ color: "blue" }}>Active</span>
+                      ) : (
+                        <span style={{ color: "red" }}>InActive</span>
+                      )}
+                    </td>
                     <td>
                       <a
                         onClick={() => {
@@ -165,9 +189,7 @@ function UserPage() {
                         <i className="bi bi-trash"></i>
                       </a>
                       <a
-                        onClick={() => {
-                          LoadDetail(item.id);
-                        }}
+                        onClick={() => handleUpdate(item.id)}
                         className="btn btn-primary"
                       >
                         <i className="bi bi-ban"></i>
