@@ -28,12 +28,16 @@ function Navbar({ Toggle }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item mx-2 rounded border">
-              <a className="nav-link text-black" aria-current="page" href="#">
+              <a
+                className="nav-link text-black"
+                aria-current="page"
+                href="/profile"
+              >
                 Account
               </a>
             </li>
             <li className="nav-item border rounded">
-              <a className="nav-link text-black" aria-current="page" href="#">
+              <a className="nav-link text-black" aria-current="page" href="/">
                 {" "}
                 Logout
               </a>

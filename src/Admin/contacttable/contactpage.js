@@ -13,6 +13,7 @@ function ContactTable() {
   const [sortedEmpData, setSortedEmpData] = useState([]);
   const [isAscending, setIsAscending] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [status, setStatus] = useState(0);
   const navigate = useNavigate();
 
   const LoadDetail = (id) => {
@@ -84,6 +85,22 @@ function ContactTable() {
     setSortedEmpData(filteredData);
   }, [searchQuery]);
 
+  async function handleUpdate(id) {
+    if (window.confirm("Do you want to change the status of this contact?")) {
+      let ContactList = [...empdata];
+      let newContact = ContactList.filter((c) => c.id === id)[0];
+      newContact.status = !newContact.status;
+      await fetch(`http://localhost:9999/contacts/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newContact),
+      });
+      setStatus(!status);
+    }
+  }
+
   return (
     <div className="d-flex">
       <div className={toggle ? "d-none" : "w-auto position-fixed"}>
@@ -127,6 +144,7 @@ function ContactTable() {
                 <td>Email</td>
                 <td>Date Send</td>
                 <td>Content</td>
+                <th>Status</th>
                 <td>Action</td>
               </tr>
             </thead>
@@ -140,6 +158,13 @@ function ContactTable() {
                     <td>{item.date_send}</td>
                     <td>{item.content}</td>
                     <td>
+                      {item.status === true ? (
+                        <span style={{ color: "blue" }}>Show</span>
+                      ) : (
+                        <span style={{ color: "red" }}>Hide</span>
+                      )}
+                    </td>
+                    <td>
                       <a
                         onClick={() => {
                           Removefunction(item.id);
@@ -149,9 +174,7 @@ function ContactTable() {
                         <i className="bi bi-trash"></i>
                       </a>
                       <a
-                        onClick={() => {
-                          LoadDetail(item.id);
-                        }}
+                        onClick={() => handleUpdate(item.id)}
                         className="btn btn-primary"
                       >
                         <i className="bi bi-eye"></i>

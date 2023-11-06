@@ -13,6 +13,7 @@ function AdTable() {
   const [sortedEmpData, setSortedEmpData] = useState([]);
   const [isAscending, setIsAscending] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [status, setStatus] = useState(0);
   const navigate = useNavigate();
 
   const LoadDetail = (id) => {
@@ -88,6 +89,22 @@ function AdTable() {
     setSortedEmpData(filteredData);
   }, [searchQuery]);
 
+  async function handleUpdate(id) {
+    if (window.confirm("Do you want to change the status of this ad?")) {
+      let AdList = [...empdata];
+      let newAd = AdList.filter((a) => a.id === id)[0];
+      newAd.status = !newAd.status;
+      await fetch(`http://localhost:9999/ads/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newAd),
+      });
+      setStatus(!status);
+    }
+  }
+
   return (
     <div className="d-flex">
       <div className={toggle ? "d-none" : "w-auto position-fixed"}>
@@ -135,6 +152,7 @@ function AdTable() {
                 <th>Content</th>
                 <th>Label</th>
                 <th>Category</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -156,6 +174,13 @@ function AdTable() {
                     <td>{item.label}</td>
                     <td>{item.category}</td>
                     <td>
+                      {item.status === true ? (
+                        <span style={{ color: "blue" }}>Show</span>
+                      ) : (
+                        <span style={{ color: "red" }}>Hide</span>
+                      )}
+                    </td>
+                    <td>
                       <a
                         onClick={() => {
                           LoadEdit(item.id);
@@ -173,9 +198,7 @@ function AdTable() {
                         <i className="bi bi-trash"></i>
                       </a>
                       <a
-                        onClick={() => {
-                          LoadDetail(item.id);
-                        }}
+                        onClick={() => handleUpdate(item.id)}
                         className="btn btn-primary"
                       >
                         <i className="bi bi-eye"></i>
