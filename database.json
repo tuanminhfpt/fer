@@ -19,10 +19,18 @@
     {
       "id": 4,
       "username": "Demo",
-      "age": "23",
+      "age": 23,
       "email": "khoa@gmail.com",
       "password": "123",
-      "role": "Admin"
+      "role": "user"
+    },
+    {
+      "username": "trung123",
+      "age": 18,
+      "email": "trungyna1708@gmail.com",
+      "password": "123",
+      "role": "user",
+      "id": 5
     }
   ],
   "ads": [
@@ -65,6 +73,254 @@
       "email": "user2@gmail.com",
       "date_send": "2023-10-25",
       "content": "A contact message from User 2."
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "category": "Technology",
+      "imageSrc": "https://blog.bit.ai/wp-content/uploads/2020/09/Top-10-Technology-Blogs-You-Must-Subscribe-to-in-2020-Facebook.png",
+      "title": "Tech Post 1",
+      "date": "12 Nov 2023",
+      "description": "This is a technology-related post with some different content.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "John Doe"
+    },
+    {
+      "id": 2,
+      "category": "Travel",
+      "imageSrc": "https://dosixfigures.com/wp-content/uploads/best-travel-blogs.jpg",
+      "title": "Travel Post 2",
+      "date": "15 Nov 2023",
+      "description": "Explore amazing destinations in this travel post with unique details.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "Alice Smith"
+    },
+    {
+      "id": 3,
+      "category": "Food",
+      "imageSrc": "https://www.proideators.com/wp-content/uploads/2022/07/How-To-Make-Your-Career-As-A-Food-Blogger-In-India-ProiDeators.jpg",
+      "title": "Food Post 3",
+      "date": "18 Nov 2023",
+      "description": "Delicious recipes and culinary adventures in this food post.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "Michael Johnson"
+    },
+    {
+      "id": 4,
+      "category": "Health",
+      "imageSrc": "https://www.rasmussen.edu/images/rasmussenlibraries/blogs/wellness-blogs-article-blog65dc3e79-1277-40fe-a68d-82e9e8b3f5dc.jpg",
+      "title": "Health Post 4",
+      "date": "21 Nov 2023",
+      "description": "Tips for a healthy lifestyle and well-being in this health-related post.",
+      "profileImgSrc": "https://blog.bit.ai/wp-content/uploads/2020/09/Top-10-Technology-Blogs-You-Must-Subscribe-to-in-2020-Facebook.png",
+      "profileName": "Samantha Davis"
+    },
+    {
+      "id": 5,
+      "category": "Entertainment",
+      "imageSrc": "https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/04/attachment_81413912.png?auto=format&q=60&fit=max&w=930",
+      "title": "Entertainment Post 5",
+      "date": "24 Nov 2023",
+      "description": "Get entertained with the latest news and updates in this post.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "David Wilson"
+    },
+    {
+      "id": 6,
+      "category": "Fashion",
+      "imageSrc": "https://img.freepik.com/free-vector/hand-drawn-clothing-store-logo-design_23-2149577874.jpg",
+      "title": "Fashion Post 6",
+      "date": "27 Nov 2023",
+      "description": "Trendy fashion trends and style tips in this post.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "Emily Brown"
+    },
+    {
+      "id": 7,
+      "category": "Sports",
+      "imageSrc": "https://images-platform.99static.com/UZ_RWL2B8NMuWd0Cncb5AegxAK0=/300x2:895x597/500x500/top/smart/99designs-contests-attachments/83/83078/attachment_83078749",
+      "title": "Sports Post 7",
+      "date": "30 Nov 2023",
+      "description": "Stay updated with the latest sports news and highlights.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "Daniel White"
+    },
+    {
+      "id": 8,
+      "category": "Music",
+      "imageSrc": "https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/06/music-logo-design.jpg",
+      "title": "Music Post 8",
+      "date": "3 Dec 2023",
+      "description": "Discover new music releases and artists in this music post.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "Olivia Green"
+    },
+    {
+      "id": 9,
+      "category": "Science",
+      "imageSrc": "https://img.freepik.com/premium-vector/science-logo-creative-bio-tech-logo-education-science-technology-lab-molecule-design-concept_669794-465.jpg",
+      "title": "Science Post 9",
+      "date": "6 Dec 2023",
+      "description": "Explore fascinating scientific discoveries and breakthroughs.",
+      "profileImgSrc": "https://i.pinimg.com/736x/fb/e5/72/fbe572e1faefa97388243a952acfbe93.jpg",
+      "profileName": "William Taylor"
+    }
+  ],
+  "comment": [
+    {
+      "uid": 2,
+      "pid": 7,
+      "content": "Anh Tuấn Hưng hát rất hay",
+      "createdDate": "18/07/2023",
+      "id": 1
+    },
+    {
+      "uid": 2,
+      "pid": 7,
+      "content": "Không biết ăn gì mà hát hay dữ",
+      "createdDate": "18/07/2023",
+      "id": 2
+    },
+    {
+      "uid": 3,
+      "pid": 7,
+      "content": "Hay khủng khiếp. Hôm đó đi xem mà đông quá trời",
+      "createdDate": "18/07/2023",
+      "id": 3
+    },
+    {
+      "uid": 1,
+      "pid": 8,
+      "content": "Ummm, ôm nhiều vé quá giờ không bán được",
+      "createdDate": "18/07/2023",
+      "id": 4
+    },
+    {
+      "uid": 1,
+      "pid": 8,
+      "content": "Khả năng cao là không tổ chức ở Việt Nam",
+      "createdDate": "18/07/2023",
+      "id": 5
+    },
+    {
+      "uid": 1,
+      "pid": 8,
+      "content": "Khumm biếc sao luôn ó trời\n",
+      "createdDate": "18/07/2023",
+      "id": 6
+    },
+    {
+      "uid": 1,
+      "pid": 8,
+      "content": "Hummmm, tôi thấy cũng bthg mà",
+      "createdDate": "18/07/2023",
+      "id": 7
+    },
+    {
+      "uid": 1,
+      "pid": 1,
+      "content": "Học react thì phải có hướng dẫn chứ ba\n",
+      "createdDate": "18/07/2023",
+      "id": 8
+    },
+    {
+      "uid": 1,
+      "pid": 1,
+      "content": "Rồi làm việc kiểu gì?",
+      "createdDate": "18/07/2023",
+      "id": 9
+    },
+    {
+      "uid": 1,
+      "pid": 1,
+      "content": "Cần nguồn tài liệu học",
+      "createdDate": "18/07/2023",
+      "id": 10
+    },
+    {
+      "uid": 1,
+      "pid": 7,
+      "content": "Hay quá anh ơi",
+      "createdDate": "20/07/2023",
+      "id": 11
+    },
+    {
+      "uid": 3,
+      "pid": 5,
+      "content": "Quá xuất sắc chúc mừng nữ sinh Nam Định",
+      "createdDate": "20/07/2023",
+      "id": 12
+    },
+    {
+      "uid": 3,
+      "pid": 5,
+      "content": "Nam Định mãi đỉnh",
+      "createdDate": "20/07/2023",
+      "id": 13
+    },
+    {
+      "uid": 3,
+      "pid": 3,
+      "content": "Bạn này quá giỏi. Xin chúc mừng gia đình",
+      "createdDate": "20/07/2023",
+      "id": 14
+    },
+    {
+      "uid": 1,
+      "pid": 2,
+      "content": "Bạn này quá giỏi. Chúc mừng tân thủ khoa khối A toàn quốc",
+      "createdDate": "20/07/2023",
+      "id": 15
+    },
+    {
+      "uid": 3,
+      "pid": 4,
+      "content": "Người Hải Phòng mãi đỉnh",
+      "createdDate": "20/07/2023",
+      "id": 16
+    },
+    {
+      "uid": 3,
+      "pid": 4,
+      "content": "Quá xuất sắc luôn ạ",
+      "createdDate": "20/07/2023",
+      "id": 17
+    },
+    {
+      "uid": 1,
+      "pid": 4,
+      "content": "Chúc mừng em. Kết quả rất xứng đáng",
+      "createdDate": "20/07/2023",
+      "id": 18
+    },
+    {
+      "uid": 3,
+      "pid": 6,
+      "content": "Phổ điểm có độ phân hóa cao. Khá tốt cho các em học sinh ",
+      "createdDate": "21/07/2023",
+      "id": 19
+    },
+    {
+      "uid": 3,
+      "pid": 6,
+      "content": "Khá là ổn ạ",
+      "createdDate": "21/07/2023",
+      "id": 20
+    },
+    {
+      "uid": null,
+      "pid": 7,
+      "content": "hay quá",
+      "createdDate": "21/07/2023",
+      "id": 21
+    },
+    {
+      "uid": 2,
+      "pid": 2,
+      "content": "Giỏi ạ",
+      "createdDate": "21/07/2023",
+      "id": 22
     }
   ]
 }

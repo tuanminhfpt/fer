@@ -236,6 +236,7 @@ header.shadow .logo {
     align-items: center;
     column-gap: 1.5rem;
     margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
 }
 
 .filter-item {
@@ -454,6 +455,7 @@ footer p {
     margin-bottom: 10px;
     display: inline-block;
     transition: .3s;
+    font-weight: bold;
 }
 
 .quicklinks ul li a:hover {
@@ -482,12 +484,14 @@ footer p {
 
 .contactBx .info li span {
     color: #999;
+    font-weight: bold;
 }
 
 .contactBx .info li a {
     color: #999;
     text-decoration: none;
     transition: .5s;
+    font-weight: bold;
 }
 
 .contactBx .info li a:hover {
@@ -773,4 +777,97 @@ footer p {
 
 .share-title {
     font-size: 1.1rem;
+}
+
+/* styles.css */
+.footer-container {
+    background-color: #000;
+    padding: 40px 15px;
+}
+
+.footer-container h2 {
+    font-size: 24px;
+}
+
+.footer-container p {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sci {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.sci a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sci i {
+    font-size: 24px;
+    transition: color 0.2s;
+}
+
+.sci i:hover {
+    color: orange;
+}
+
+.quicklinks ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quicklinks a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+.sec h2 {
+    color: orange;
+    font-weight: bold;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.info a {
+    text-decoration: none;
+    color: #000;
+}
+
+.info i {
+    font-size: 18px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .sec {
+        margin-bottom: 30px;
+    }
+}
+
+.filter-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.active-filter {
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
 }
