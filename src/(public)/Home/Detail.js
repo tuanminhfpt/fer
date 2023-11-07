@@ -3,14 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { Container, Image, Row } from "react-bootstrap";
 import Header from "./Header";
 import Footer from "./Footer";
-import Comment from "./Comment";
 
 export default function Detail() {
   const { id } = useParams();
 
   const [details, setDetails] = useState({});
   const [comments, setComments] = useState([]);
-  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:9999/posts/${id}`)
@@ -24,23 +22,7 @@ export default function Detail() {
       .then((data) => {
         setComments(data);
       });
-
-    // Fetch the user data
-    fetch("http://localhost:9999/users")
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data);
-      });
   }, [id]);
-
-  const getUsernameById = (userId) => {
-    const user = users.find((user) => user.id === userId);
-    return user ? user.username : "Unknown User";
-  };
-
-  const handleCommentSubmit = (newComment) => {
-    setComments([...comments, newComment]);
-  };
 
   return (
     <Container fluid>
@@ -50,7 +32,7 @@ export default function Detail() {
       <Container>
         <section className="post-header">
           <div className="header-content post-container">
-            <Link to={"/"}>Back to Home</Link>
+            <Link to={"/home"}>Back to Home</Link>
             <h1 className="header-title">{details.title}</h1>
             <Image src={details.imageSrc} alt="" className="header-img" fluid />
           </div>
@@ -80,11 +62,6 @@ export default function Detail() {
             )}
           </ul>
         </section>
-        <Comment
-          postId={id}
-          // currentUserId={yourCurrentUserId}
-          onCommentSubmit={handleCommentSubmit}
-        />
       </Container>
       <Row>
         <Footer />
