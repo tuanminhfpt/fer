@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   const [active, setActive] = useState(1);
   return (
-    <div className="sidebar d-flex justify-content-between flex-column bg-danger text-white py-3 ps-3 pe-5 vh-100 shadow">
+    <div className="sidebar d-flex justify-content-between flex-column text-white py-3 ps-3 pe-5 vh-100 shadow">
       <div>
         <a href="/admin" className="p-3 text-decoration-none text-white">
-          <i className="bi bi-house fs-4 me-4"></i>
-          <span className="fs-3">KoonE</span>
+          <i class="bi bi-bootstrap me-3 fs-4"></i>
+          <span className="fs-3">Blog Web</span>
         </a>
         <hr className="text-white mt-2" />
         <ul className="nav nav-pills flex-column mt-3">
@@ -63,12 +63,9 @@ function Sidebar() {
             className={active === 5 ? "active nav-item p-2" : "nav-item p-2"}
             onClick={() => setActive(5)}
           >
-            <Link
-              to="/admin/setting"
-              className="p-1 text-decoration-none text-white"
-            >
-              <i className="bi bi-gear me-3 fs-4"></i>
-              <span className="fs-4">Settings</span>
+            <Link to="/home" className="p-1 text-decoration-none text-white">
+              <i className="bi bi-house fs-4 me-4"></i>
+              <span className="fs-4">Home</span>
             </Link>
           </li>
         </ul>

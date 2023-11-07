@@ -1,5 +1,5 @@
 .sidebar ul li:hover {
-    background-color: rgb(150, 0, 0);
+    background-color: #ff6600;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -9,7 +9,11 @@
 }
 
 .active {
-    background-color: rgb(150, 0, 0);
+    background-color: #ff6600;
     border-radius: 5px;
     color: white;
+}
+
+.sidebar {
+    background: #fd8f44;
 }

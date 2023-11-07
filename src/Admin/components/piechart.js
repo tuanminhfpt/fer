@@ -8,10 +8,10 @@ const data = {
   datasets: [
     {
       label: "Quantity",
-      backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1"],
-      hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5"],
+      backgroundColor: ["#FF5733", "#FFD700", "#FF7F50", "#FF1493"],
+      hoverBackgroundColor: ["#FF5733", "#FFD700", "#FF7F50", "#FF1493"],
       borderColor: "rgb(255, 99, 132)",
-      data: [300, 50, 100, 40],
+      data: [123, 56, 319, 47],
     },
   ],
 };

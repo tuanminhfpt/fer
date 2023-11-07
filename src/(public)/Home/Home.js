@@ -48,22 +48,24 @@ export default function Home() {
           className="d-flex justify-content-center"
           style={{ width: "95%", padding: "20px 20px" }}
         >
-          <Carousel style={{ width: "100%", height: "30%" }}>
-            {ads.map((ad, index) => (
-              <Carousel.Item key={index}>
-                <a href={`/ads/${ad.id}`}>
-                  <img
-                    className="d-block w-100"
-                    src={ad.image}
-                    alt={ad.title}
-                  />
-                  <Carousel.Caption>
-                    <h3>{ad.title}</h3>
-                    <p>{ad.content}</p>
-                  </Carousel.Caption>
-                </a>
-              </Carousel.Item>
-            ))}
+          <Carousel style={{ width: "70%" }}>
+            {ads
+              .filter((ad) => ad.status === true)
+              .map((ad, index) => (
+                <Carousel.Item key={index}>
+                  <a href={`/ads/${ad.id}`}>
+                    <img
+                      className="d-block w-100"
+                      src={ad.image}
+                      alt={ad.title}
+                    />
+                    <Carousel.Caption>
+                      <h3>{ad.title}</h3>
+                      <p>{ad.content}</p>
+                    </Carousel.Caption>
+                  </a>
+                </Carousel.Item>
+              ))}
           </Carousel>
         </div>
 

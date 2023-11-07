@@ -3,7 +3,7 @@ import { Navbar, Form, FormControl, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsPersonFill } from "react-icons/bs";
 
-export default function Header({ onSearch }) {
+export default function Header({ onSearch, role }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
@@ -44,9 +44,19 @@ export default function Header({ onSearch }) {
             />
           </Form>
           <div className="d-flex align-items-center">
-            <Link to={"/profile"} className="me-3" style={{ color: "orange" }}>
-              <BsPersonFill size={32} /> {/* Use Bootstrap icon */}
+            {role === "user" && (
+              <Link
+                to={"/profile"}
+                className="me-3"
+                style={{ color: "orange" }}
+              >
+                <BsPersonFill size={32} />
+              </Link>
+            )}
+            <Link to={"/admin"} className="me-3" style={{ color: "orange" }}>
+              Dashboard
             </Link>
+
             <Link
               to={"/"}
               variant="link"
@@ -54,18 +64,6 @@ export default function Header({ onSearch }) {
               style={{ color: "orange", fontWeight: "bold" }}
             >
               Sign out
-            </Link>
-            <Link
-              to={"/admin"}
-              variant="primary"
-              className="btn me-3"
-              style={{
-                backgroundColor: "orange",
-                boxShadow: "none",
-                fontWeight: "bold",
-              }}
-            >
-              Dashboard
             </Link>
           </div>
         </Navbar.Collapse>

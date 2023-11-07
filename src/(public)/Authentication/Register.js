@@ -51,6 +51,7 @@ function Register() {
       })
         .then((res) => {
           toast.success("Registered successfully.");
+          localStorage.setItem("registeredUser", JSON.stringify(regobj));
           navigate("/");
         })
         .catch((err) => {
