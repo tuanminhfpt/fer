@@ -5,7 +5,7 @@
       "username": "Admin User",
       "age": 30,
       "email": "admin@gmail.com",
-      "password": "admin123",
+      "password": "123",
       "role": "admin",
       "status": true
     },
@@ -25,7 +25,7 @@
       "email": "khoa@gmail.com",
       "password": "123",
       "role": "user",
-      "status": true
+      "status": false
     },
     {
       "id": 5,
@@ -34,7 +34,7 @@
       "email": "trungyna1708@gmail.com",
       "password": "123",
       "role": "user",
-      "status": false
+      "status": true
     }
   ],
   "ads": [
@@ -72,6 +72,15 @@
       "label": "Amazon",
       "category": "Technology",
       "id": 4
+    },
+    {
+      "image": "https://www.adsoftheworld.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBczJhIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a217068f4b8fbe03c8ca170f6e822f4df9c53522/thumbnail_356465",
+      "title": "Son moi",
+      "content": "Son moi",
+      "label": "Loreal",
+      "category": "Food",
+      "id": 5,
+      "status": true
     }
   ],
   "contacts": [

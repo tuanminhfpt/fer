@@ -2,6 +2,17 @@ import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
 function Navbar({ Toggle }) {
+  const handleLogout = () => {
+    // Clear the session or authentication state
+    localStorage.removeItem("token"); // Assuming you store a token for authentication
+    // You may need to clear other session-related data
+    sessionStorage.removeItem("userId");
+    sessionStorage.removeItem("userRole");
+
+    // Redirect to the login page or perform any other necessary actions
+    window.location.href = "/";
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark shadow"
@@ -37,10 +48,17 @@ function Navbar({ Toggle }) {
               </a>
             </li>
             <li className="nav-item border rounded">
-              <a className="nav-link text-black" aria-current="page" href="/">
-                {" "}
+              <button
+                className="nav-link text-black"
+                onClick={handleLogout}
+                style={{
+                  border: "none",
+                  background: "transparent",
+                  cursor: "pointer",
+                }}
+              >
                 Logout
-              </a>
+              </button>
             </li>
           </ul>
         </div>

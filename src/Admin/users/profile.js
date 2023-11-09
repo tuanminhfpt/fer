@@ -18,7 +18,7 @@ function UserProfile() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/users/" + empid)
+    fetch("http://localhost:9999/users/" + empid)
       .then((res) => {
         return res.json();
       })
@@ -86,7 +86,6 @@ function UserProfile() {
                         className="form-control"
                         id="id"
                         value={empdata.id}
-                        disabled
                       />
                     </div>
 

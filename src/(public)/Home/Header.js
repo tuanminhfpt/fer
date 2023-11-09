@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Navbar, Form, FormControl, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsPersonFill } from "react-icons/bs";
 
 export default function Header({ onSearch, role }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     onSearch(searchTerm);
@@ -14,6 +15,13 @@ export default function Header({ onSearch, role }) {
     const newValue = e.target.value;
     setSearchTerm(newValue);
     onSearch(newValue);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    sessionStorage.clear();
+
+    navigate("/");
   };
 
   return (
@@ -45,26 +53,41 @@ export default function Header({ onSearch, role }) {
           </Form>
           <div className="d-flex align-items-center">
             {role === "user" && (
-              <Link
-                to={"/profile"}
-                className="me-3"
-                style={{ color: "orange" }}
-              >
+              <Link to={"/home"} className="me-3" style={{ color: "orange" }}>
                 <BsPersonFill size={32} />
               </Link>
             )}
-            <Link to={"/admin"} className="me-3" style={{ color: "orange" }}>
-              Dashboard
-            </Link>
 
-            <Link
-              to={"/"}
-              variant="link"
-              className="px-3 me-2"
-              style={{ color: "orange", fontWeight: "bold" }}
-            >
-              Sign out
-            </Link>
+            {role ? (
+              <>
+                <Link
+                  to={"/admin"}
+                  className="me-3"
+                  style={{ color: "orange" }}
+                >
+                  Dashboard
+                </Link>
+
+                <Link
+                  to="/"
+                  onClick={handleLogout}
+                  variant="link"
+                  className="px-3 me-2"
+                  style={{ color: "orange", fontWeight: "bold" }}
+                >
+                  Logout
+                </Link>
+              </>
+            ) : (
+              <Link
+                to="/"
+                variant="link"
+                className="px-3 me-2"
+                style={{ color: "orange", fontWeight: "bold" }}
+              >
+                Login
+              </Link>
+            )}
           </div>
         </Navbar.Collapse>
       </Container>
