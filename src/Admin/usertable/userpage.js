@@ -16,9 +16,6 @@ function UserPage() {
   const [status, setStatus] = useState(0);
   const navigate = useNavigate();
 
-  const LoadDetail = (id) => {
-    navigate("detail/" + id);
-  };
   const LoadEdit = (id) => {
     navigate("edit/" + id);
   };

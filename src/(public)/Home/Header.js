@@ -62,7 +62,7 @@ export default function Header({ onSearch }) {
               </Link>
 
               <Link
-                to="/"
+                to="/login"
                 onClick={handleLogout}
                 variant="link"
                 className="px-3 me-2"

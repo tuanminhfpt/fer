@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./style/styles.css";
-import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
@@ -8,6 +7,7 @@ function Register() {
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -16,11 +16,19 @@ function Register() {
     let errormessage = "Please enter the value in ";
     if (username === null || username === "") {
       isproceed = false;
-      errormessage += " Fullname";
+      errormessage += " Fullname,";
+    }
+    if (age < 0) {
+      isproceed = false;
+      setMessage("Please input a valid age");
+    }
+    if (age === null || age === "") {
+      isproceed = false;
+      errormessage += " Age,";
     }
     if (password === null || password === "") {
       isproceed = false;
-      errormessage += " Password";
+      errormessage += " Password,";
     }
     if (email === null || email === "") {
       isproceed = false;
@@ -28,12 +36,12 @@ function Register() {
     }
 
     if (!isproceed) {
-      toast.warning(errormessage);
+      setMessage(errormessage);
     } else {
       if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
       } else {
         isproceed = false;
-        toast.warning("Please enter the valid email");
+        setMessage("Please enter the valid email");
       }
     }
     return isproceed;
@@ -41,7 +49,14 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let regobj = { username, age, email, password, role: "user" };
+    let regobj = {
+      username,
+      age,
+      email,
+      password,
+      role: "user",
+      status: true,
+    };
     if (IsValidate()) {
       console.log(regobj);
       fetch("http://localhost:9999/users", {
@@ -50,12 +65,12 @@ function Register() {
         body: JSON.stringify(regobj),
       })
         .then((res) => {
-          toast.success("Registered successfully.");
+          setMessage("Registered successfully.");
           localStorage.setItem("registeredUser", JSON.stringify(regobj));
           navigate("/");
         })
         .catch((err) => {
-          toast.error("Failed: " + err.message);
+          setMessage("Failed: " + err.message);
         });
     }
   };
@@ -78,7 +93,7 @@ function Register() {
               <div className="card-body p-md-5">
                 <div className="row justify-content-center">
                   <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                    <p className="text-center h1 fw-bold mx-1 mx-md-4 mt-4">
                       Sign up
                     </p>
 
@@ -146,8 +161,9 @@ function Register() {
                           </label>
                         </div>
                       </div>
+                      {message && <p className="text-danger">{message}</p>}
 
-                      <div className="form-check d-flex justify-content-center mb-5">
+                      <div className="form-check d-flex justify-content-center">
                         <input
                           className="form-check-input me-2"
                           type="checkbox"
@@ -156,17 +172,25 @@ function Register() {
                         />
                         <label className="form-check-label" for="form2Example3">
                           I agree all statements in{" "}
-                          <a href="#!">Terms of service</a>
+                          <a style={{ color: "blue" }} href="#">
+                            Terms of service
+                          </a>
                         </label>
                       </div>
-
-                      <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-lg"
-                        >
-                          Register
-                        </button>
+                      <div style={{ display: "flex" }}>
+                        <div className="d-flex justify-content-center mx-4 mb-lg-4">
+                          <Link to="/login" className="btn btn-primary btn-lg">
+                            Login
+                          </Link>
+                        </div>
+                        <div className="d-flex justify-content-center mx-4 mb-lg-4">
+                          <button
+                            type="submit"
+                            className="btn btn-primary btn-lg"
+                          >
+                            Register
+                          </button>
+                        </div>
                       </div>
                     </form>
                   </div>

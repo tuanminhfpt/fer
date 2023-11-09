@@ -16,7 +16,7 @@
       "email": "manager@gmail.com",
       "password": "manager123",
       "role": "manager",
-      "status": true
+      "status": false
     },
     {
       "id": 4,
