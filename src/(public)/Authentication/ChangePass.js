@@ -56,7 +56,7 @@ function ChangePass() {
           })
           .then((response) => {
             alert("Password changed successfully!");
-            navigate("/");
+            navigate("/login");
           })
           .catch((error) => {
             setMessage("An error occurred. Please try again later.");

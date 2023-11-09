@@ -30,11 +30,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/resetpass" element={<ResetPass />} />
         <Route path="/changepass/:email" element={<ChangePass />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home/:id/details" element={<Detail />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/profile" element={<UserProfile />} />

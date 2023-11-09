@@ -3,7 +3,7 @@ import { Navbar, Form, FormControl, Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonFill } from "react-icons/bs";
 
-export default function Header({ onSearch, role }) {
+export default function Header({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
@@ -52,42 +52,33 @@ export default function Header({ onSearch, role }) {
             />
           </Form>
           <div className="d-flex align-items-center">
-            {role === "user" && (
-              <Link to={"/home"} className="me-3" style={{ color: "orange" }}>
-                <BsPersonFill size={32} />
+            <Link to={"/profile"} className="me-3" style={{ color: "orange" }}>
+              <BsPersonFill size={32} />
+            </Link>
+
+            <>
+              <Link to={"/admin"} className="me-3" style={{ color: "orange" }}>
+                Dashboard
               </Link>
-            )}
 
-            {role ? (
-              <>
-                <Link
-                  to={"/admin"}
-                  className="me-3"
-                  style={{ color: "orange" }}
-                >
-                  Dashboard
-                </Link>
-
-                <Link
-                  to="/"
-                  onClick={handleLogout}
-                  variant="link"
-                  className="px-3 me-2"
-                  style={{ color: "orange", fontWeight: "bold" }}
-                >
-                  Logout
-                </Link>
-              </>
-            ) : (
               <Link
                 to="/"
+                onClick={handleLogout}
                 variant="link"
                 className="px-3 me-2"
                 style={{ color: "orange", fontWeight: "bold" }}
               >
-                Login
+                Logout
               </Link>
-            )}
+            </>
+            <Link
+              to="/login"
+              variant="link"
+              className="px-3 me-2"
+              style={{ color: "orange", fontWeight: "bold" }}
+            >
+              Login
+            </Link>
           </div>
         </Navbar.Collapse>
       </Container>

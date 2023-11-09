@@ -40,10 +40,10 @@ function Footer() {
         <h2>Quick Links</h2>
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="/home">About</a>
+            <a href="/">About</a>
           </li>
         </ul>
       </div>

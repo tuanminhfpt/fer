@@ -79,7 +79,7 @@ function ResetPass() {
           Reset password
         </button>
         <div className="d-flex justify-content-between mt-4">
-          <a href="/">Login</a>
+          <a href="/login">Login</a>
           <a href="/register">Register</a>
         </div>
       </div>

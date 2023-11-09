@@ -63,7 +63,7 @@ function Sidebar() {
             className={active === 5 ? "active nav-item p-2" : "nav-item p-2"}
             onClick={() => setActive(5)}
           >
-            <Link to="/home" className="p-1 text-decoration-none text-white">
+            <Link to="/" className="p-1 text-decoration-none text-white">
               <i className="bi bi-house fs-4 me-4"></i>
               <span className="fs-4">Home</span>
             </Link>

@@ -45,7 +45,7 @@ function Login() {
               if (user.role === "admin") {
                 navigate("/admin");
               } else {
-                navigate("/home");
+                navigate("/");
               }
             } else {
               setMessage("Wrong email or password!");
